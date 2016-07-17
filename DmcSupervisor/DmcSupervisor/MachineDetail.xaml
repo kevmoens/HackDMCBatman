@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="DmcSupervisor.MachineDetail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DmcSupervisor"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="Page_Loaded">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ListView x:Name="listView" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" DataContext="{Binding MachData}">
+            <ListView.ItemTemplate>
+            <DataTemplate>
+                <RelativePanel>
+                        <TextBlock x:Name="sequence" Text="{Binding sequence}" Padding="5,5,5,5"/>
+                        <TextBlock x:Name="mt_value" Text="{Binding mt_value}" RelativePanel.RightOf="sequence" Padding="5,5,5,5"/>
+                        <TextBlock x:Name="category" Text="{Binding category}" RelativePanel.RightOf="mt_value" Padding="5,5,5,5"/>
+                        <TextBlock x:Name="component" Text="{Binding component}" RelativePanel.RightOf="category" Padding="5,5,5,5"/>
+                        <TextBlock x:Name="type" Text="{Binding type}" RelativePanel.RightOf="component" Padding="5,5,5,5"/>
+                        <TextBlock x:Name="subtype" Text="{Binding subtype}" RelativePanel.RightOf="type" Padding="5,5,5,5"/>
+                        <TextBlock x:Name="machine_id" Text="{Binding machine_id}" RelativePanel.RightOf="subtype" Padding="5,5,5,5"/>
+                        <TextBlock x:Name="instance_id" Text="{Binding instance_id}" RelativePanel.RightOf="machine_id" Padding="5,5,5,5"/>
+                        <TextBlock x:Name="mt_name" Text="{Binding mt_name}" RelativePanel.RightOf="instance_id" Padding="5,5,5,5"/>
+                        <TextBlock x:Name="vitual_flag" Text="{Binding vitual_flag}" RelativePanel.RightOf="mt_name" Padding="5,5,5,5"/>
+                    </RelativePanel>
+            </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button x:Name="btnBack" Content="Back" VerticalAlignment="Bottom" Tapped="Button_Tapped" />
+    </Grid>
+</Page>

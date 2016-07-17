@@ -1,0 +1,49 @@
+﻿<Page xmlns:my="using:Syncfusion.UI.Xaml.Charts" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DmcSupervisor"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Charts"
+    x:Class="DmcSupervisor.MachineDataChartTwo"
+    mc:Ignorable="d">
+
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <syncfusion:SfChart Header="Utilization" FontSize="16" 
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+
+
+            <!--Adding Legend to the SfChart
+            <syncfusion:SfChart.Legend>
+                <syncfusion:ChartLegend Visibility="Visible"/>
+            </syncfusion:SfChart.Legend>-->
+
+
+            <!--Initialize the horizontal axis for SfChart-->
+            <syncfusion:SfChart.PrimaryAxis>
+                <syncfusion:CategoryAxis Header="Time" FontSize="14"/>
+            </syncfusion:SfChart.PrimaryAxis>
+
+
+            <!--Initialize the vertical axis for SfChart-->
+            <syncfusion:SfChart.SecondaryAxis>
+                <syncfusion:NumericalAxis Header="Percent" FontSize="14"/>
+            </syncfusion:SfChart.SecondaryAxis>
+
+
+            <!--<syncfusion:ColumnSeries Label="2010" ItemsSource="{Binding MachData, Mode=OneWay}" 
+    XBindingPath="sequence" YBindingPath="mt_value" />-->
+
+            <!--Initialize the series for SfChart-->
+            <syncfusion:ColumnSeries Label="Time" ItemsSource="{Binding UtilizationDays}" 
+    XBindingPath="Day" YBindingPath="AbovePercent" />
+
+
+            <!--<syncfusion:LineSeries x:Name="series1" Label="Company Details"   XBindingPath="sequence" YBindingPath="value"  ItemsSource="{Binding UtilizationDays}"/>-->
+        </syncfusion:SfChart>
+        <Button x:Name="btnBack" Content="Back" VerticalAlignment="Bottom" Tapped="Button_Tapped" />
+    </Grid>
+</Page>
+
+    
